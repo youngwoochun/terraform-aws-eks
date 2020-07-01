@@ -2,6 +2,3 @@
 terraform.tfstate
 terraform.tfstate.backup
 .git
-config-map-aws-auth.yaml
-config
-.circleci
