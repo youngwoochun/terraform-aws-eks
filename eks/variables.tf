@@ -2,11 +2,13 @@
 ### Cluster ##
 ##############
 variable "cluster_name" {
-  type    = string
+  description = "Name of the EKS cluster"
+  type        = string
 }
 variable "private_subnet_id" {
-  type     = list(string)
-  default = []
+  description = "IDs of the private subnets"
+  type        = list(string)
+  default     = []
 }
 variable "cluster_security_group_id" {
   description = "Security group of the eks cluster"
@@ -37,25 +39,32 @@ variable "vpc_id" {
 ### ASG ###
 ###########
 variable "asg_name" {
-  type = string
+  description = "The name of the auto scaling group"
+  type        = string
 }
 variable "asg_max_size" {
-  type = number
+  description = "The maximum size of the auto scale group"
+  type        = number
 }
 variable "asg_min_size" {
-  type = number
+  description = "The minimum size of the auto scale group"
+  type        = number
 }
 variable "health_check_grace_period" {
-  type = number
+  description = "Time (in seconds) after instance comes into service before checking health"
+  type        = number
 }
 variable "health_check_type" {
-  type = string
+  description = ""EC2" or "ELB". Controls how health checking is done"
+  type        = string
 }
 variable "asg_desired_capacity" {
-  type = number
+  description = "The number of Amazon EC2 instances that should be running in the group"
+  type        = number
 }
 variable "force_delete" {
-  type = bool
+  description = "Allows deleting the autoscaling group without waiting for all instances in the pool to terminate"
+  type        = bool
 }
 
 #######################
