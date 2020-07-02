@@ -10,6 +10,15 @@ data "aws_eks_cluster_auth" "main_eks" {
   name = module.eks.cluster_id
 }
 
+data "terraform_remote_state" "network" {
+  backend = "s3"
+  config = {
+    bucket = "terraform-state-product-a"
+    key    = "dev/us-east-1/landing-zone"
+    region = "us-east-1"
+  }
+}
+
 provider "kubernetes" {
   host                   = data.aws_eks_cluster.main_eks.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.main_eks.certificate_authority.0.data)
