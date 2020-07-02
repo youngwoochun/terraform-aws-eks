@@ -55,7 +55,7 @@ variable "health_check_grace_period" {
   type        = number
 }
 variable "health_check_type" {
-  description = ""EC2" or "ELB". Controls how health checking is done"
+  description = "EC2 or ELB. Controls how health checking is done"
   type        = string
 }
 variable "asg_desired_capacity" {
