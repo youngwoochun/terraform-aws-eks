@@ -34,7 +34,7 @@ module "eks" {
   cluster_endpoint_public_access       = var.cluster_endpoint_public_access
   cluster_endpoint_private_access      = var.cluster_endpoint_private_access
   cluster_endpoint_public_access_cidrs = var.cluster_endpoint_public_access_cidrs
-  vpc_id                               = data.terraform_remote_state.network.output.vpc_id
+  vpc_id                               = data.terraform_remote_state.network.outputs.vpc_id
   cluster_security_group_id            = module.eks.cluster_sg_id
 
   asg_name                             = var.worker_group_defaults["asg_name"]
