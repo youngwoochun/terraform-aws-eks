@@ -1,4 +1,4 @@
-tags = "dev_app"
+tags = "demo_app"
 
 cluster_name = "main_eks"
 cluster_endpoint_public_access = true
