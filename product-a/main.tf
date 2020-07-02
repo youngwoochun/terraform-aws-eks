@@ -44,7 +44,7 @@ module "eks" {
   health_check_type                    = var.worker_group_defaults["health_check_type"]
   asg_desired_capacity                 = var.worker_group_defaults["asg_desired_capacity"]
   force_delete                         = var.worker_group_defaults["force_delete"]
-  private_subnet_id                    = ["subnet-04e45f0cb72f9feb7", "subnet-062cf50d11fd5a7f5"]
+  private_subnet_id                    = data.terraform_remote_state.network.outputs.private_subnet_id
 
   image_id                             = var.worker_group_defaults["image_id"]
   instance_type                        = var.worker_group_defaults["instance_type"]
