@@ -19,7 +19,7 @@ provider "kubernetes" {
 }
 
 module "eks" {
-  source                      = "../terraform-aws-eks/"
+  source                      = "../eks/"
 
   cluster_name                         = var.cluster_name
   cluster_endpoint_public_access       = var.cluster_endpoint_public_access
